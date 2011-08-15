@@ -4,6 +4,17 @@ body {
   margin:0;
 }
 
+h2 {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#333333), color-stop(100%,#111111));
+  background: -webkit-linear-gradient(top, #333333 0%,#111111 100%);
+  background: linear-gradient(top, #333333 0%,#111111 100%);
+  color:#FFF;
+  margin:0;
+  padding:5px 0;
+  text-align:center;
+  text-shadow:-1px -1px 0 #000;
+}
+
 ul {
   list-style:none;
   margin:0;
@@ -11,30 +22,47 @@ ul {
 }
 
 ul li {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d8d8d8), color-stop(100%,#ededed));
-  background: -webkit-linear-gradient(top, #d8d8d8 0%,#ededed 100%);
-  background: linear-gradient(top, #d8d8d8 0%,#ededed 100%);
-  border-bottom:1px solid rgba(0,0,0,0.2);
-  border-top:1px solid rgba(255,255,255,0.9);
+  background: #c6c6c6;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c6c6c6), color-stop(100%,#e8e8e8));
+  background: -webkit-linear-gradient(top, #c6c6c6 0%,#e8e8e8 100%);
+  background: linear-gradient(top, #c6c6c6 0%,#e8e8e8 100%);
+  border-bottom:1px solid rgba(0,0,0,0.5);
   font-size:14px;
   font-weight:bold;
-  padding:5px;
   position:relative;
-  text-shadow:0 1px 0 rgba(255,255,255,0.9);
 }
 
 ul li div.progress {
-  background:#4F9940;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#999999), color-stop(100%,#878787));
+  background: -webkit-linear-gradient(top, #999999 0%,#878787 100%);
+  background: linear-gradient(top, #999999 0%,#878787 100%);
+  -webkit-box-shadow:0 1px 0 rgba(255,255,255,0.4) inset;
   height:100%;
   left:0;
   position:absolute;
   top:0;
 }
 
-ul li div.text {
-  position:relative;
+ul li.completed div.progress {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#82c964), color-stop(100%,#77a85a)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #82c964 0%,#77a85a 100%); /* Chrome10+,Safari5.1+ */
+  background: linear-gradient(top, #82c964 0%,#77a85a 100%); /* W3C */
 }
 
-ul li:first-child {
-  border-top:none;
+ul li:last-child div.progress {
+/*  border-bottom:0;*/
+}
+
+ul li a.text {
+  color:#222;
+  display:block;
+  padding:10px 5px;
+  position:relative;
+  text-decoration:none;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+}
+
+ul li a.text span {
+  float:right;
+  text-transform:capitalize;
 }
