@@ -1,4 +1,8 @@
 // var putioRefresh = safari.extension.settings.refresh;
+// safari.self.height = 200
+// safari.application.addEventListener("command", performCommand, false);  
+
+// alert(mySettingKey);
 var putioKey = safari.extension.secureSettings.key;
 var puytioSecret = safari.extension.secureSettings.secret;
 var getData = function(){
@@ -8,8 +12,9 @@ var getData = function(){
     for (var i=0; i < results.length; i++) {
       var name = results[i].name;
       var percent_done = results[i].percent_done;
-      var status = (results[i].status === "Completed")? "completed" : "";
-      $("ul").append("<li class='"+status+"'><div class='progress' style='width:"+percent_done+"%;'></div><a href='https://put.io/transfers' class='text'>"+name+"</a></li>");
+      var statusClass = (results[i].status === "Completed")? "completed" : "";
+      var statusIcon = (results[i].status === "Completed")? "2" : "";
+      $("ul").append("<li class='"+statusClass+"'><div class='progress' style='width:"+percent_done+"%;'></div><div class='text'>"+name+"<span>"+statusIcon+"</span></div></li>");
     };
   });
 }
