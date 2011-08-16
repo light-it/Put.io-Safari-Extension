@@ -66,6 +66,8 @@
 			<string>All</string>
 		</dict>
 	</dict>
+	<key>Update Manifest URL</key>
+	<string>http://extensions.fuelcollective.com/putio.plist</string>
 	<key>Website</key>
 	<string>http://fuelcollective.com</string>
 </dict>
