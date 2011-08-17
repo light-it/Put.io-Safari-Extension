@@ -7,7 +7,7 @@
 }
 
 body {
-  background:#EEE;
+  background:#E7EBEF;
   font:62.5%/1.5 "Helvetica Neue", Helvetica, sans-serif;
   margin:0;
 }
@@ -24,27 +24,28 @@ h2 {
 }
 
 ul {
+  border-radius:3px;
   list-style:none;
   margin:0;
   padding:0;
 }
 
 ul li {
-  background: #c6c6c6;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c6c6c6), color-stop(100%,#e8e8e8));
-  background: -webkit-linear-gradient(top, #c6c6c6 0%,#e8e8e8 100%);
-  background: linear-gradient(top, #c6c6c6 0%,#e8e8e8 100%);
-/*  border-bottom:1px solid rgba(0,0,0,0.5);*/
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dce2ea), color-stop(50%,#d4dae4), color-stop(51%,#ced4de), color-stop(100%,#cdd4dd)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #dce2ea 0%,#d4dae4 50%,#ced4de 51%,#cdd4dd 100%); /* Chrome10+,Safari5.1+ */
+  background: linear-gradient(top, #dce2ea 0%,#d4dae4 50%,#ced4de 51%,#cdd4dd 100%); /* W3C */
+  border-bottom:1px solid rgba(0,0,0,0.4);
   font-size:14px;
-  font-weight:normal;
+  font-weight:bold;
   position:relative;
 }
 
 ul li div.progress {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#999999), color-stop(100%,#878787));
-  background: -webkit-linear-gradient(top, #999999 0%,#878787 100%);
-  background: linear-gradient(top, #999999 0%,#878787 100%);
-/*  -webkit-box-shadow:0 1px 0 rgba(255,255,255,0.4) inset;*/
+  background: -moz-linear-gradient(top, #c3c9d2 0%, #a9aeb9 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c3c9d2), color-stop(100%,#a9aeb9));
+  background: -webkit-linear-gradient(top, #c3c9d2 0%,#a9aeb9 100%);
+  background: linear-gradient(top, #c3c9d2 0%,#a9aeb9 100%);
+  -webkit-box-shadow:0 1px 0 rgba(255,255,255,0.2) inset;
   height:100%;
   left:0;
   position:absolute;
@@ -58,6 +59,10 @@ ul li.completed div.progress {
   background: linear-gradient(top, #6da867 0%,#82c961 1%,#7bc35a 50%,#6fb64e 51%,#78b059 99%,#65955f 100%);
 }
 
+ul li:first-child {
+  border-radius:3px 3px 0 0;
+}
+
 ul li.completed .text {
   color:#FFF;
   text-shadow:-1px -1px rgba(0,0,0,0.2);
@@ -68,7 +73,7 @@ ul li:last-child div.progress {
 }
 
 ul li .text {
-  color:#222;
+  color:#373D42;
   display:block;
   padding:10px 20px 10px 5px;
   position:relative;
@@ -86,6 +91,9 @@ ul li .text span {
   font-family: Pictos;
   line-height:0;
   -webkit-font-smoothing:antialiased;
-  float:right;
+/*  float:right;*/
+  position:absolute;
+  right:0;
   text-transform:capitalize;
+  top:11px;
 }

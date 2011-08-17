@@ -1,10 +1,17 @@
-// var putioRefresh = safari.extension.settings.refresh;
-// safari.self.height = 200
-// safari.application.addEventListener("command", performCommand, false);  
+const global = safari.extension.globalPage.contentWindow;
 
-// alert(mySettingKey);
-var putioKey = safari.extension.secureSettings.key;
-var puytioSecret = safari.extension.secureSettings.secret;
+var putioKey = safari.extension.secureSettings.putioKey;
+var puytioSecret = safari.extension.secureSettings.putioSecret;
+// var putioRefresh = safari.extension.settings.refresh;
+
+//  Apple sucks and these don't work for whatever reason.
+// safari.extension.settings.addEventListener("change",settingChanged,false);
+// safari.application.addEventListener("change",settingChanged,false);
+
+var updateHeight = function(totalTransfers){
+  safari.self.height = totalTransfers*42;
+}
+
 var getData = function(){
   $.getJSON('http://api.put.io/v1/transfers?method=list&request={"api_key":"'+putioKey+'","api_secret":"'+puytioSecret+'","params":{}}', function(data) {
     var results = data.response.results;
@@ -15,6 +22,13 @@ var getData = function(){
       var statusClass = (results[i].status === "Completed")? "completed" : "";
       var statusIcon = (results[i].status === "Completed")? "2" : "";
       $("ul").append("<li class='"+statusClass+"'><div class='progress' style='width:"+percent_done+"%;'></div><div class='text'>"+name+"<span>"+statusIcon+"</span></div></li>");
+    };
+    var totalTransfers = $("ul li").length;
+    updateHeight(totalTransfers);
+    if (totalTransfers > 0) {
+      $("h2").hide();
+    } else {
+      $("h2").show();
     };
   });
 }

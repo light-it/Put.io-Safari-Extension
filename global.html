@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<title>Global</title>
+    <script type="text/javascript" charset="utf-8">
+      function settingsChanged(event) {
+        alert(event)
+        if (event.key == "feedUrl") {
+          alert("test");
+          retrieveFeed();
+        }
+      }
+      // Tell Safari that we want to listen for the "change" event
+      safari.extension.secureSettings.addEventListener("change", settingsChanged, false);
+      
+    </script>
+	</head>
+	<body>
+	</body>
+</html>
