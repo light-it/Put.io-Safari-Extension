@@ -1,19 +1,15 @@
 const global = safari.extension.globalPage.contentWindow;
 
-var putioKey = safari.extension.secureSettings.putioKey;
-var puytioSecret = safari.extension.secureSettings.putioSecret;
+// var putioKey = safari.extension.secureSettings.putioKey;
+// var puytioSecret = safari.extension.secureSettings.putioSecret;
 // var putioRefresh = safari.extension.settings.refresh;
-
-//  Apple sucks and these don't work for whatever reason.
-// safari.extension.settings.addEventListener("change",settingChanged,false);
-// safari.application.addEventListener("change",settingChanged,false);
 
 var updateHeight = function(totalTransfers){
   safari.self.height = totalTransfers*42;
 }
 
 var getData = function(){
-  $.getJSON('http://api.put.io/v1/transfers?method=list&request={"api_key":"'+putioKey+'","api_secret":"'+puytioSecret+'","params":{}}', function(data) {
+  $.getJSON('http://api.put.io/v1/transfers?method=list&request={"api_key":"'+window.putioKey+'","api_secret":"'+window.puytioSecret+'","params":{}}', function(data) {
     var results = data.response.results;
     $("ul li").remove();
     for (var i=0; i < results.length; i++) {
@@ -35,5 +31,5 @@ var getData = function(){
 
 $(function(){
   getData();
-  setInterval("getData()", 5000);
+  setInterval("getData()", 30000);
 });

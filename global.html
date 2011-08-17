@@ -5,11 +5,8 @@
 		<title>Global</title>
     <script type="text/javascript" charset="utf-8">
       function settingsChanged(event) {
-        alert(event)
-        if (event.key == "feedUrl") {
-          alert("test");
-          retrieveFeed();
-        }
+        var window.putioKey = safari.extension.secureSettings.putioKey;
+        var window.puytioSecret = safari.extension.secureSettings.putioSecret;
       }
       // Tell Safari that we want to listen for the "change" event
       safari.extension.secureSettings.addEventListener("change", settingsChanged, false);
