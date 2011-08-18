@@ -4,13 +4,13 @@
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<title>Global</title>
     <script type="text/javascript" charset="utf-8">
-      function settingsChanged(event) {
-        var window.putioKey = safari.extension.secureSettings.putioKey;
-        var window.puytioSecret = safari.extension.secureSettings.putioSecret;
+      var settingsChanged = function(event) {
+        var putioKey = safari.extension.secureSettings.putioKey;
+        var puytioSecret = safari.extension.secureSettings.putioSecret;
       }
+      
       // Tell Safari that we want to listen for the "change" event
       safari.extension.secureSettings.addEventListener("change", settingsChanged, false);
-      
     </script>
 	</head>
 	<body>
