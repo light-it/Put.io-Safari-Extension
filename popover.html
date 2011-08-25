@@ -8,15 +8,16 @@
 		<script type="text/javascript" charset="utf-8">
 		  const global = safari.extension.globalPage.contentWindow;
 		  
-		  var pkey = global.safari.extension.secureSettings.putioKey;
-      var psecret = global.safari.extension.secureSettings.putioSecret;
+		  var pkey;
+      var psecret;
       
       var updateHeight = function(totalTransfers){
-        safari.self.height = totalTransfers*42;
+        safari.self.height = totalTransfers*46;
       }
 
       var getData = function(){
-        // alert(psecret);
+        var pkey = global.safari.extension.secureSettings.putioKey;
+        var psecret = global.safari.extension.secureSettings.putioSecret;
         $.getJSON('http://api.put.io/v1/transfers?method=list&request={"api_key":"'+pkey+'","api_secret":"'+psecret+'","params":{}}', function(data) {
           var results = data.response.results;
           $("ul li").remove();
