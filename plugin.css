@@ -81,14 +81,14 @@ ul li:last-child div.progress {
 ul li .text {
   color:#373D42;
   display:block;
-  padding:12px 20px 12px 5px;
+  padding:12px 40px 12px 5px;
   position:relative;
   overflow: hidden;
   text-overflow: ellipsis;
   text-decoration:none;
   text-shadow:0 1px 0 rgba(255,255,255,0.5);
   white-space: nowrap;
-  width:250px;
+  width:240px;
 }
 
 ul li .text span {
