@@ -19,6 +19,7 @@
         var pkey = global.safari.extension.secureSettings.putioKey;
         var psecret = global.safari.extension.secureSettings.putioSecret;
         $.getJSON('http://api.put.io/v1/transfers?method=list&request={"api_key":"'+pkey+'","api_secret":"'+psecret+'","params":{}}', function(data) {
+          console.log(data)
           var results = data.response.results;
           $("ul li").remove();
           for (var i=0; i < results.length; i++) {
