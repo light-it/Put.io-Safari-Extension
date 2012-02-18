@@ -27,7 +27,8 @@
             var percent_done = results[i].percent_done;
             var statusClass = (results[i].status === "Completed")? "completed" : "";
             var statusIcon = (results[i].status === "Completed")? "2" : "";
-            $("ul").append("<li class='"+statusClass+"'><div class='progress' style='width:"+percent_done+"%;'></div><div class='text'>"+name+"<span>"+statusIcon+"</span></div></li>");
+            var link = (results[i].status === "Completed")? "https://put.io/file/"+results[i].id : "https://put.io/transfers";
+            $("ul").append("<li class='"+statusClass+"'><div class='progress' style='width:"+percent_done+"%;'></div><a href='"+link+"' class='text'>"+name+"<span>"+statusIcon+"</span></a></li>");
           };
           var totalTransfers = $("ul li").length;
           updateHeight(totalTransfers);
@@ -46,7 +47,7 @@
 		</script>
 	</head>
 	<body>
-    <h2>No Active Transfers</h2>
+    <h2><a href="http://put.io">No Active Transfers</a></h2>
 	  <ul>
 	  </ul>
 	</body>
