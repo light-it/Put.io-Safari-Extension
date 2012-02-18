@@ -5,7 +5,7 @@
 	<key>Author</key>
 	<string>Stephen Korecky</string>
 	<key>Builder Version</key>
-	<string>7535.18.5</string>
+	<string>7534.52.7</string>
 	<key>CFBundleDisplayName</key>
 	<string>put.io</string>
 	<key>CFBundleIdentifier</key>
@@ -69,8 +69,8 @@
 		</dict>
 	</dict>
 	<key>Update Manifest URL</key>
-	<string>http://extensions.fuelcollective.com/putio.plist</string>
+	<string>http://fc-safari-extension.s3.amazonaws.com/putio/update.plist</string>
 	<key>Website</key>
-	<string>http://fuelcollective.com</string>
+	<string>http://skorecky.github.com/Put.io-Safari-Extension/</string>
 </dict>
 </plist>
